@@ -1,13 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { ConnexionService } from '../../services/connexion.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  providers:[ConnexionService]
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+private connexionService: ConnexionService
+  ) { }
+
+  userInfos = {
+    login:'',
+    password:''
+  }
+
+  formSubmit(infos){
+    this.connexionService.userLogin(infos);
+  }
 
   ngOnInit() {
   }

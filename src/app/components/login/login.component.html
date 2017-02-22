@@ -1,3 +1,21 @@
-<p>
-  login works!
-</p>
+ <header>
+        <div>
+            <img src="app/img/logoFB.jpg" alt="Logo Facebook">
+
+
+            <form (submit)="formSubmit(userInfos)"action="connexion.php" method="POST">
+                <section>
+                    <label for="userName">Adresse e-mail ou mobile	</label>
+                    <input [(ngModel)]="userInfos.login"type="text" name="userName" placeholder="Votre login">
+                </section>
+                <section>
+                    <label for="userPass">Mot de passe</label>
+                    <input [(ngModel)]="userInfos.password" type="password" name="userPass" placeholder="Votre mot de passe">
+                    <a href="#">Informations de compte oubliées ?</a>
+                </section>
+                <section>
+                    <input type="submit" value="Connexion">
+                </section>
+            </form>
+        </div>
+</header>
